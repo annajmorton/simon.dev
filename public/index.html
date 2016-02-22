@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 
 <html>
@@ -9,15 +8,215 @@
 		
 		<meta charset="utf8">
 
+		<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+
+		<style type="text/css">
+
+			.sImonB {
+
+				text-align: center;
+				padding: 50px 50px 50px 50px;
+				border: solid black;
+				margin-top: 5px;
+
+			}
+
+			#B1 {
+
+				background-color: green;
+			}
+			#B2 {
+
+				background-color: red;
+			}
+			#B3 {
+
+				background-color: yellow;
+			}
+			#B4 {
+
+				background-color: blue;
+			}
+
+		</style>
+
+
 	</head>
 
 
 
 	<body>
+	<div class="container-fluid">
+	<!-- Page Layout -->
+		
 
-		testing this all day!
+		<div class="row col-md-12"></div>
+		<div class="row">
+				<div class="col-md-12">
+				<button id="B1" class= "sImonB"></button>
+				<button id="B2" class= "sImonB"></button>
+				</div>
+		</div>
+		<div class="row">
+				<div class="col-md-12">
+				<button id="B4" class= "sImonB"></button>
+				<button id="B3" class= "sImonB"></button>
+				</div>
+		</div>
 
+	<input id="sImon">
+	<input id="usEr">
+	<label for="rOund">the rOOOund</label>
+	<input id="rOund" value="10">
+
+		<div>
+			<button id="start">start new game</button>
+		</div>
+
+	<!-- JS time!!! -->
+	<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript">
+		"use strict"
+
+		var	sImon = [];
+		var usEr = [];
+		var rOund = parseInt($("#rOund").val());
+		var counter = 0;
+		var trackUser = false;
+
+		// FN SIMON SETUP
+
+			// generates random number between 1 and 4
+			function rAnDO() {
+
+				return Math.floor( Math.random()*(4-1 +1) + 1);
+
+			};
+
+			// creates sImon sequence
+			function GENsImon(rOund) {
+
+				var array = [];
+
+					for (var i = 0; i < rOund; i++) {
+							
+						console.log("I'm in");
+						array[i] = rAnDO();
+
+					};
+
+				return array;
+
+			};
+
+			//runs the animation for the simon pattern on the page
+			function sImonAnIMate(array,rOund) {
+
+				array.forEach(function (e,i,array){
+
+					var tImO = 900*i;
+
+					setTimeout( function () {	
+
+						if (rOund >= 11) {
+
+							tImO = tImO/2;
+						}
+					
+						AnIMate(e);
+
+						if (i==(array.length-1)) {
+
+							console.log("setting trackUser to true");
+							trackUser = true;
+						}
+
+					}, tImO);
+
+
+				});
+
+			};
+			
+			function AnIMate(e) {
+				
+
+				var bUttOn = "B" + e;
+			
+				$("#" + bUttOn).css("opacity","0");
+
+				setTimeout(function() {
+
+					$("#" + bUttOn).css("opacity","1");
+
+				}, 200);
+
+			};
+
+		// FN USER INPUT
+
+
+		// FN CHECK
+		// Let's RUN THIS SHOW!!!!!
+		$("#start").click( function (SSSevent){
+
+				rOund = parseInt($("#rOund").val());
+				sImon = GENsImon(rOund);
+
+				sImonAnIMate(sImon,rOund);
+				// sImon = [1,2,3,4];
+				// trackUser = true;
+
+
+				$(".sImonB").on ("click", function (event) {
+
+
+
+					if(trackUser) {
+
+						// console.log("in this if");
+						var bUttOnNum = parseInt($(this).attr("id").replace("B",""));
+
+
+						AnIMate(bUttOnNum);
+
+						usEr[counter] = bUttOnNum;
+
+						console.log(usEr);
+
+						if ( usEr[counter]!= sImon[counter]) {
+
+			                console.log("I'm in it");
+			                counter = 0;
+			                usEr = [];
+			               
+			            } else {
+
+			                 counter++;
+
+			                    if (counter == sImon.length) {
+
+			                        alert("my day has come!");
+			                        // counter = 0;
+			            
+			                    }   
+			            }
+					};
+
+				});
+
+
+
+		});
+			
+
+
+
+	</script>
+
+
+
+	</div>
 	</body>
 
 </html>
-
