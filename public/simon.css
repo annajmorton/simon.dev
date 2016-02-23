@@ -1,0 +1,149 @@
+/*-------------------------*/
+/*   Style it my darling   */
+/*-------------------------*/
+.white {
+	
+	background-color: white;
+	border: solid black 2px;
+	margin: 0px 0px 0px 0px;
+}
+.blue {
+
+	background-color: blue;
+	border: solid black 2px;
+	margin: 0px 0px 0px 0px;
+
+}
+.red {
+
+	background-color: red;
+	border: solid black 2px;
+	margin: 0px 0px 0px 0px;
+
+}
+.yellow {
+
+	background-color: yellow;
+	border: solid black 2px;
+	margin: 0px 0px 0px 0px;
+
+}
+
+.sImonB {
+
+	text-align: center;
+	border: solid black 2px;
+	margin: 0px 0px 0px 0px;
+
+}
+
+.wBtop{
+	border-top: white;
+}
+.wBright{
+	border-right: white;
+}
+.wBbottom{
+	border-bottom: white;
+}
+.wBleft{
+	border-left: white;
+}
+
+/*-------------------------*/
+/*  row positioning        */
+/*-------------------------*/
+.rOw1 {
+
+	width: 600px;
+	height: 70px;
+	display: inline-flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-content: center;
+}
+.rOw2 {
+
+	width: 600px;
+	height: 200px;
+	display: inline-flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+	justify-content: center;
+	align-content: center;
+	/*align-content: stretch;*/
+}
+.PietMondrianColourLine{
+
+	width: 600px;
+	display: inline-flex;
+	flex-wrap: wrap;
+
+}
+
+/*-------------------------*/
+/*The BUTTONS --- yyEESSSS!*/
+/*-------------------------*/
+#B1 {
+
+	height: 50%; 
+	width: 40%;
+
+}
+#B2 {
+
+	height: 70%; 
+	width: 40%;
+}
+#B3 {
+
+	height: 50%; 
+	width: 30%;
+}
+#B4 {
+
+	height: 100%; 
+	width: 30%;
+}
+
+
+/*-----------------*/
+/*empty bOxessszzzz*/
+/*-----------------*/
+
+/*row 1 and 3 boxes*/
+.bOx1x1{
+	height: 50%;
+	width: 10%; 
+}
+.bOx1x2{
+	
+	height: 50%;
+	width: 20%; 
+}
+.bOx1x4{
+	height: 50%;
+	width: 40%; 
+}
+.bOx1x3{
+	height: 50%;
+	width: 30%; 
+}
+
+/*row 2 boxes*/
+
+.bOx2x1r2{
+
+	height: 70%;
+	width: 10%;
+} 
+.bOx1x1r2{
+
+	height: 30%;
+	width: 10%;
+}
+.bOx1x4r2{
+
+	height: 30%;
+	width: 40%;
+}
